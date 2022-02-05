@@ -5,7 +5,7 @@
     "lib": ["es6"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "rootDir": "./src",
+    "rootDir": "./",
     "typeRoots": [
       "./node_moduels/@types",
       "./src/@types"
@@ -17,10 +17,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@modules/*": ["./src/modules"],
-      "@shared/*": ["./src/shared"]
+      "@modules/*": [".modules"],
+      "@shared/*": [".shared"]
     }
   },
   "include": [
