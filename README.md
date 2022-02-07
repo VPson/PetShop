@@ -16,7 +16,7 @@
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/VPson/Petshop.git>
+$ git clone <https://github.com/VPson/PetShop.git>
 
 # Instale as dependências
 $ npm install
