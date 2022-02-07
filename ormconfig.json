@@ -3,7 +3,7 @@
 	"port": 5432,
 	"host": "localhost",
 	"username": "docker_petshop",
-	"passoword": "password_petshop",
+	"password": "password_petshop",
 	"database": "petshop",
 	"logging": false,
 	"migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],

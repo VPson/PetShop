@@ -31,11 +31,12 @@ export class CreateUsers1644249694638 implements MigrationInterface {
                     },
                     {
                         name: 'contact',
-                        type: 'number'
+                        type: 'varchar'
                     },
                     {
                         name: 'isAdmin',
-                        type: 'varchar'
+                        type: 'boolean',
+                        default: false
                     },
                     {
                         name: 'address',

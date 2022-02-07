@@ -19,7 +19,7 @@ class User {
 	password: string;
 
 	@Column()
-	contact: number;
+	contact: string;
 
 	@Column()
 	isAdmin: boolean;
