@@ -37,7 +37,7 @@ $ npm test
 
 ### Tecnologias utilizadas
 
-As seguintes ferramentas foram usadas na construção do projeto:
+As seguintes ferramentas estão sendo usadas na construção do projeto:
 
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
