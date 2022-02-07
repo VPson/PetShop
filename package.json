@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "typeorm": "ts-node dev -r tsconfig-paths/register ./nome_moduels/typeorm/cli",
     "build": "babel src --extensions \".js,.ts\" -- out-dir dist ==compy-files --no-copy-ignored",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "start": "node dist/server.js"
@@ -38,6 +39,7 @@
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
     "pg": "^8.7.3",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.2.41",
+    "uuid": "^8.3.2"
   }
 }
