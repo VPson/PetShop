@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "typeorm": "ts-node dev -r tsconfig-paths/register ./nome_moduels/typeorm/cli",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./nome_moduels/typeorm/cli",
     "build": "babel src --extensions \".js,.ts\" -- out-dir dist ==compy-files --no-copy-ignored",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "start": "node dist/server.js"

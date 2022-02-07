@@ -6,9 +6,9 @@
 	"passoword": "password_petshop",
 	"database": "petshop",
 	"logging": false,
-	"migration": ["./src/shared/infra/typeorm/migration/*.ts"],
+	"migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
 	"entities": ["./src/modules/**/entities/*.ts"],
 	"cli": {
-		"migrationDir": "./src/shared/infra/typeorm/migrations"
+		"migrationsDir": "./src/shared/infra/typeorm/migrations"
 	}
 }
