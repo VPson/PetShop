@@ -25,7 +25,6 @@ class UsersRepositoryInMemory implements IUsersRepository{
 			address
 		});
 		this.users.push(user);
-		console.log('Usuário registrado');
 	}
 	async findByEmail(email: string): Promise<User> {
 		return this.users.find(user => user.email === email);
