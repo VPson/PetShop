@@ -1,29 +1,33 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "lib": ["es6"],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "rootDir": "./",
-    "typeRoots": [
-      "./node_moduels/@types",
-      "./src/@types"
-    ],   
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "outDir": "./dist",
-    "removeComments": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "baseUrl": "./src",
+    "target": "es2017",               
+    "module": "commonjs",  
+
+		"rootDir": "./",    
+
+    "baseUrl": "./src",                           
     "paths": {
-      "@modules/*": [".modules"],
-      "@shared/*": [".shared"]
-    }
-  },
-  "include": [
-    "src/**/*"
-  ]
+			"@modules/*": ["modules/*"],
+			"@shared/*": ["shared/*"]
+		},      
+    "esModuleInterop": true,       
+
+    "experimentalDecorators": true,        
+		"emitDecoratorMetadata": true,      
+    "skipLibCheck": true,                          
+    "forceConsistentCasingInFileNames": true,      
+		"resolveJsonModule": true,
+    
+    "lib": ["es6"],   
+    "noImplicitAny": true,  
+    "removeComments": true,  
+    "allowJs": true,                  
+    "outDir": "./dist",               
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ]              
+  }
 }
+
+
