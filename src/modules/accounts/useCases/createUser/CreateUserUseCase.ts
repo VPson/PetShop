@@ -1,5 +1,6 @@
 import { hash } from 'bcrypt';
 import { IUsersRepository } from 'modules/accounts/repositories/IUsersRepository';
+import { inject, injectable } from 'tsyringe';
 
 interface IRequest{
 	name: string,
@@ -10,8 +11,10 @@ interface IRequest{
 	address: string,
 }
 
+@injectable()
 class CreateUserUseCase {
 	constructor(
+		@inject('UsersRepository')
 		private usersRepository: IUsersRepository
 	){}
 	async execute({

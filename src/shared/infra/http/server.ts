@@ -1,7 +1,12 @@
+import 'reflect-metadata';
+import '@shared/container';
 import 'express-async-errors';
+import { createConnection } from 'typeorm';
 import express, { NextFunction, Request, Response } from 'express';
 import { routes } from './routes';
 import { AppError } from 'shared/errors/AppError';
+
+createConnection();
 
 const app = express();
 app.use(express.json());
