@@ -1,4 +1,4 @@
-import { User } from 'modules/accounts/infra/typeorm/entities/User';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
@@ -37,7 +37,7 @@ class Pet {
 
 	constructor() {
 		if(!this.id){
-			this.id = uuidV4;
+			this.id = uuidV4();
 		}
 	}
 }
