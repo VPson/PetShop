@@ -1,15 +1,10 @@
-import { User } from '@modules/accounts/infra/typeorm/entities/User';
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
 @Entity('pets')
 class Pet {
 	@PrimaryColumn()
 	id: string
-
-	@ManyToOne(() => User)
-	@JoinColumn({ name: 'user_id'})
-	user: User
 
 	@Column()
 	user_id: string
@@ -18,7 +13,7 @@ class Pet {
 	name: string
 
 	@Column()
-	bithDate: Date
+	birthDate: Date
 
 	@Column()
 	species: string
@@ -30,7 +25,7 @@ class Pet {
 	gender: string
 
 	@CreateDateColumn()
-	created_ad: Date
+	created_at: Date
 
 	@UpdateDateColumn()
 	updated_at: Date

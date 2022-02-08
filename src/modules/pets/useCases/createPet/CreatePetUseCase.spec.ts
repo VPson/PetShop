@@ -17,7 +17,7 @@ describe('Create Pet', () => {
 		const pet = await createPetUseCase.execute({
 			user_id: 'pet1',
 			name: 'pet1',
-			bithDate: date,
+			birthDate: date,
 			species: 'pet1',
 			breed: 'pet1',
 			gender: 'pet1'
@@ -32,7 +32,7 @@ describe('Create Pet', () => {
 		await createPetUseCase.execute({
 			user_id: 'pet1',
 			name: 'pet1',
-			bithDate: date,
+			birthDate: date,
 			species: 'pet1',
 			breed: 'pet1',
 			gender: 'pet1'
@@ -41,13 +41,12 @@ describe('Create Pet', () => {
 			createPetUseCase.execute({
 				user_id: 'pet1',
 				name: 'pet1',
-				bithDate: date,
+				birthDate: date,
 				species: 'pet1',
 				breed: 'pet1',
 				gender: 'pet1'
 			})
 		).rejects.toBeInstanceOf(AppError);
-
+		
 	});
-
 });

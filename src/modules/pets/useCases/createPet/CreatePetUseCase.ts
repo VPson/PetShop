@@ -1,25 +1,28 @@
 import { Pet } from '@modules/pets/infra/typeorm/entities/pets';
 import { IPetsRepository } from '@modules/pets/repositories/IPetsRepository';
 import { AppError } from '@shared/errors/AppError';
+import { inject, injectable } from 'tsyringe';
 
 interface IRequest {
 	user_id: string
 	name: string
-	bithDate: Date
+	birthDate: Date
 	species: string
 	breed: string
 	gender: string
 }
 
+@injectable()
 class CreatePetUseCase {
 	constructor(
+		@inject('PetsRepository')
 		private petsRepository: IPetsRepository,
 	){}
 
 	async execute({
 		user_id,
 		name,
-		bithDate,
+		birthDate,
 		species,
 		breed,
 		gender
@@ -27,7 +30,7 @@ class CreatePetUseCase {
 		const petAlreadyExists = await this.petsRepository.findPet({
 			user_id,
 			name,
-			bithDate,
+			birthDate,
 			species,
 			breed,
 			gender
@@ -40,7 +43,7 @@ class CreatePetUseCase {
 		const pet = await this.petsRepository.create({
 			user_id,
 			name,
-			bithDate,
+			birthDate,
 			species,
 			breed,
 			gender

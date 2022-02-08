@@ -9,7 +9,7 @@ class PetsRepositoryInMemory implements IPetsRepository{
 	async findPet({
 		user_id,
 		name,
-		bithDate,
+		birthDate,
 		species,
 		breed,
 		gender
@@ -17,7 +17,7 @@ class PetsRepositoryInMemory implements IPetsRepository{
 		const pet = this.pets.find((pet) => 
 		pet.user_id === user_id &&
 		pet.name === name &&
-		pet.bithDate === bithDate &&
+		pet.birthDate === birthDate &&
 		pet.species === species &&
 		pet.breed === breed &&
 		pet.gender === gender
@@ -28,7 +28,7 @@ class PetsRepositoryInMemory implements IPetsRepository{
 	async create({
 		user_id,
 		name,
-		bithDate,
+		birthDate,
 		species,
 		breed,
 		gender
@@ -38,7 +38,7 @@ class PetsRepositoryInMemory implements IPetsRepository{
 		Object.assign(pet, {
 			user_id,
 			name,
-			bithDate,
+			birthDate,
 			species,
 			breed,
 			gender
