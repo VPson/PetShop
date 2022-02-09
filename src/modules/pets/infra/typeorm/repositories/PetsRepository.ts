@@ -50,6 +50,11 @@ class PetsRepository implements IPetsRepository {
 		return pet;
 	}
 
+	async list():Promise<Pet[]>{
+		const all = await this.repository.find();
+		return all;
+	}
+
 }
 
 export { PetsRepository };
