@@ -1,3 +1,4 @@
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { Pet } from '@modules/pets/infra/typeorm/entities/pets';
 import { IPetsRepository } from '@modules/pets/repositories/IPetsRepository';
 import { AppError } from '@shared/errors/AppError';
@@ -17,6 +18,9 @@ class CreatePetUseCase {
 	constructor(
 		@inject('PetsRepository')
 		private petsRepository: IPetsRepository,
+
+		@inject('UsersRepository')
+		private usersRepository: IUsersRepository
 	){}
 
 	async execute({
@@ -27,6 +31,12 @@ class CreatePetUseCase {
 		breed,
 		gender
 	}:IRequest): Promise<Pet>{
+		const owner = await this.usersRepository.findById(user_id);
+
+		if(!owner){
+			throw new AppError('Owner does not exists');
+		}
+
 		const petAlreadyExists = await this.petsRepository.findPet({
 			user_id,
 			name,

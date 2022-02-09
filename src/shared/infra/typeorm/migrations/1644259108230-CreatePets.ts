@@ -46,6 +46,16 @@ export class CreatePets1644259108230 implements MigrationInterface {
             type: 'timestamp',
             default: 'now()',
           },
+        ],
+        foreignKeys: [
+          {
+            name: 'FKUserid',
+            referencedTableName: 'users',
+            referencedColumnNames: ['id'],
+            columnNames: ['user_id'],
+            onDelete: 'SET NULL',
+            onUpdate: 'SET NULL',
+          }
         ]
       })
     );

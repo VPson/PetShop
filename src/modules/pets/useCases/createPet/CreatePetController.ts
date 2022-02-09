@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import { CreatePetUseCase } from './CreatePetUseCase';
-import { v4 as uuidV4 } from 'uuid';
 
 class CreatePetController {
 	async handle(req: Request, res: Response): Promise<Response>{
@@ -12,12 +11,11 @@ class CreatePetController {
 			species,
 			breed,
 			gender } = req.body;
-			const a = uuidV4(user_id);
 
 		const createPetContoller = container.resolve(CreatePetUseCase);
 
 		const pet = await createPetContoller.execute({
-			user_id: a,
+			user_id,
 			name,
 			birthDate,
 			species,
