@@ -4,6 +4,9 @@ import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepositor
 import { PetsRepository } from '@modules/pets/infra/typeorm/repositories/PetsRepository';
 import { IPetsRepository } from '@modules/pets/repositories/IPetsRepository';
 
+import { IServicesRepository } from '@modules/pets/repositories/IServicesRepository';
+import { ServicesRepository } from '@modules/pets/infra/typeorm/repositories/ServicesRepository';
+
 import { container } from 'tsyringe';
 
 container.registerSingleton<IUsersRepository>(
@@ -14,4 +17,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IPetsRepository>(
 	'PetsRepository',
 	PetsRepository
+);
+
+container.registerSingleton<IServicesRepository>(
+	'ServicesRepository',
+	ServicesRepository
 );

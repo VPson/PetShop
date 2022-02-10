@@ -46,6 +46,11 @@ class PetsRepositoryInMemory implements IPetsRepository{
 		this.pets.push(pet);
 		return pet;	
 	}
+
+	async list(): Promise<Pet[]> {
+		const all = this.pets;
+		return all;
+	}
 	
 }
 
