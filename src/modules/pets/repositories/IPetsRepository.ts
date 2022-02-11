@@ -5,6 +5,7 @@ interface IPetsRepository{
 	create(data: ICreatePetDTO): Promise<Pet>;
 	findPet(data: ICreatePetDTO): Promise<Pet>
 	list(): Promise<Pet[]>
+	findById(id: string): Promise<Pet>
 }
 
 export { IPetsRepository };

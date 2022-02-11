@@ -16,16 +16,17 @@ export class CreateServices1644265867729 implements MigrationInterface {
             type: 'uuid',
           },
           {
-            name: 'name',
-            type: 'varchar',
-          },
-          {
             name: 'procedure',
             type: 'varchar',
           },
           {
             name: 'veterinarian',
             type: 'varchar',
+          },
+          {
+            name: 'description',
+            type: 'varchar',
+            isNullable: true
           },
           {
             name: 'image',

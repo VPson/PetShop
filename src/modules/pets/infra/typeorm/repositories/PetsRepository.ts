@@ -9,6 +9,7 @@ class PetsRepository implements IPetsRepository {
 	constructor(){
 		this.repository = getRepository(Pet);
 	}
+
 	async create({
 	user_id,
 	name,
@@ -53,6 +54,10 @@ class PetsRepository implements IPetsRepository {
 	async list():Promise<Pet[]>{
 		const all = await this.repository.find();
 		return all;
+	}
+
+	async findById(id: string): Promise<Pet> {
+		return await this.repository.findOne(id);
 	}
 
 }
