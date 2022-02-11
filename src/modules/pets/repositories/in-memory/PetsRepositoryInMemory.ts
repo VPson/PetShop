@@ -47,9 +47,8 @@ class PetsRepositoryInMemory implements IPetsRepository{
 		return pet;	
 	}
 
-	async list(): Promise<Pet[]> {
-		const all = this.pets;
-		return all;
+	async listPets(user_id: string): Promise<Pet[]> {
+		return await this.pets.filter(pet => pet.user_id === user_id);
 	}
 
 	async findById(id: string): Promise<Pet> {
