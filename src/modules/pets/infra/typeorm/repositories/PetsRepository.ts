@@ -10,6 +10,11 @@ class PetsRepository implements IPetsRepository {
 		this.repository = getRepository(Pet);
 	}
 
+	async listPets(user_id: string): Promise<Pet[]> {
+		const all = await this.repository.find({ user_id: user_id });
+		return all;
+	}
+
 	async create({
 	user_id,
 	name,
@@ -49,11 +54,6 @@ class PetsRepository implements IPetsRepository {
 		});
 
 		return pet;
-	}
-
-	async list():Promise<Pet[]>{
-		const all = await this.repository.find();
-		return all;
 	}
 
 	async findById(id: string): Promise<Pet> {
