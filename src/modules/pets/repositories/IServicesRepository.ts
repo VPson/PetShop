@@ -4,6 +4,7 @@ import { Service } from '../infra/typeorm/entities/services';
 interface IServicesRepository {
 	create(data: ICreateServiceDTO): Promise<Service>
 	findService(date: ICreateServiceDTO): Promise<Service>
+	findByPetId(id: string): Promise<Service[]>
 }
 
 export { IServicesRepository };

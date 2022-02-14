@@ -7,10 +7,10 @@
 
 ### Features
 
-- [ ] Cadastro de usuário administrador
-- [ ] Cadastro de usuário(Dono pet)
-- [ ] Cadastro de pets
-- [ ] Registro de serviços dos pets
+- [x] Cadastro de usuário administrador
+- [x] Cadastro de usuário(Dono pet)
+- [x] Cadastro de pets
+- [x] Registro de serviços dos pets
 
 ### Como inicializar a aplicação
 

@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, OneToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+import { Service } from './services';
 
 @Entity('pets')
 class Pet {
@@ -23,6 +24,9 @@ class Pet {
 
 	@Column()
 	gender: string
+
+	@OneToOne(() => Service)
+	services: Service[]
 
 	@CreateDateColumn()
 	created_at: Date
