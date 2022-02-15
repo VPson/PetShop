@@ -45,8 +45,8 @@ class CreatePetUseCase {
 			breed,
 			gender
 		});
-
-		if(petAlreadyExists && petAlreadyExists.user_id === user_id) {
+		
+		if(petAlreadyExists) {
 			throw new AppError('This pet already exists!');
 		}
 

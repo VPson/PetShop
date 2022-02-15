@@ -8,23 +8,7 @@ class ServicesRepository implements IServicesRepository {
 	constructor(){
 		this.repository = getRepository(Service);
 	}
-
-	async findService({
-		pet_id,
-		procedure,
-		veterinarian,
-		description,
-	}: ICreateServiceDTO): Promise<Service> {
-		const service = await this.repository.findOne({		
-			pet_id,
-			procedure,
-			veterinarian,
-			description
-		});
-		
-		return service;
-	}
-
+	
 	async create({
 		pet_id,
 		procedure,
@@ -43,6 +27,27 @@ class ServicesRepository implements IServicesRepository {
 		await this.repository.save(service);
 
 		return service;
+	}
+
+	async findService({
+		pet_id,
+		procedure,
+		veterinarian,
+		description,
+	}: ICreateServiceDTO): Promise<Service> {
+		const service = await this.repository.findOne({		
+			pet_id,
+			procedure,
+			veterinarian,
+			description
+		});
+		
+		return service;
+	}
+
+	async findByPetId(pet_id: string): Promise<Service[]> {
+		const services = await this.repository.find({ pet_id: pet_id });
+		return services;
 	}
 
 }

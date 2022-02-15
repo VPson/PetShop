@@ -3,7 +3,6 @@ import { IPetsRepository } from '@modules/pets/repositories/IPetsRepository';
 import { getRepository, Repository } from 'typeorm';
 import { Pet } from '../entities/pets';
 
-
 class PetsRepository implements IPetsRepository {
 	private repository: Repository<Pet>
 	constructor(){
@@ -16,6 +15,7 @@ class PetsRepository implements IPetsRepository {
 	}
 
 	async create({
+	id,
 	user_id,
 	name,
 	birthDate,
@@ -24,6 +24,7 @@ class PetsRepository implements IPetsRepository {
 	gender
 	}: ICreatePetDTO): Promise<Pet> {
 		const pet = this.repository.create({
+			id,
 			user_id,
 			name,
 			birthDate,
