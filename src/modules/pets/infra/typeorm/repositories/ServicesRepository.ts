@@ -10,6 +10,7 @@ class ServicesRepository implements IServicesRepository {
 	}
 	
 	async create({
+		id,
 		pet_id,
 		procedure,
 		veterinarian,
@@ -17,6 +18,7 @@ class ServicesRepository implements IServicesRepository {
 		image
 	}: ICreateServiceDTO): Promise<Service> {
 		const service = this.repository.create({
+			id,
 			pet_id,
 			procedure,
 			veterinarian,
@@ -43,6 +45,10 @@ class ServicesRepository implements IServicesRepository {
 		});
 		
 		return service;
+	}
+
+	async findById(id: string): Promise<Service>{
+		return await this.repository.findOne(id);
 	}
 
 	async findByPetId(pet_id: string): Promise<Service[]> {
