@@ -10,7 +10,7 @@ module.exports = {
     ]
   ],
   plugins: [
-    ['module.resovler', {
+    ['module-resolver', {
       alias: {
         '@modules': './src/modules',
         '@shared': './src/shared'
